@@ -1,0 +1,56 @@
+/* Root Pane */
+.root {
+    -fx-background-color: #212733;
+}
+
+/* Header Section */
+.header-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.subheader-label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #d1d1d1;
+}
+
+/* Form Section */
+.form-label {
+    -fx-text-fill: #d1d1d1;
+    -fx-font-size: 14px;
+}
+
+.form-input {
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-font-size: 14px;
+}
+
+.login-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-font-size: 14px;
+}
+
+.login-button:hover {
+    -fx-background-color: #45a049;
+}
+
+/* Footer Section */
+.footer-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #e0e0e0;
+}
+
+/* Image Style */
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 4, 4);
+}

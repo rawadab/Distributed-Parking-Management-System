@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox prefHeight="519.0" prefWidth="522.0" spacing="15" styleClass="root"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.mo.MunicipalityOfficerController">
+
+    <!-- Button to generate transaction report -->
+    <Button onAction="#generateTransactionReport" text="Generate Transactions Report" styleClass="button"/>
+
+    <!-- VBox for Transactions Table -->
+    <VBox spacing="10.0">
+        <TableView fx:id="transactionsTable" prefHeight="190.0" prefWidth="560.0" styleClass="table-view">
+            <columns>
+                <TableColumn fx:id="TransactionVehicleNumberColumn" prefWidth="120.0" text="Vehicle Number" styleClass="table-column-header"/>
+                <TableColumn fx:id="TransactionSpaceIdColumn" prefWidth="120.0" text="Parking Space ID" styleClass="table-column-header"/>
+                <TableColumn fx:id="TransactionZoneColumn" prefWidth="120.0" text="Parking Zone" styleClass="table-column-header"/>
+                <TableColumn fx:id="TransactionStartTimeColumn" prefWidth="120.0" text="Start Time" styleClass="table-column-header"/>
+                <TableColumn fx:id="TransactionStopTimeColumn" prefWidth="120.0" text="Stop Time" styleClass="table-column-header"/>
+                <TableColumn fx:id="TransactionAmountColumn" prefWidth="120.0" text="Amount" styleClass="table-column-header"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <!-- Button to generate citation report -->
+    <Button onAction="#generateCitationReport" text="Generate Citations Report" styleClass="button"/>
+
+    <!-- VBox for Citations Table -->
+    <VBox spacing="10.0">
+        <TableView fx:id="citationsTable" prefHeight="190.0" prefWidth="560.0" styleClass="table-view">
+            <columns>
+                <TableColumn fx:id="citationsVehicleNumberColumn" prefWidth="150.0" text="Vehicle Number" styleClass="table-column-header" />
+                <TableColumn fx:id="citationsSpaceIdColumn" prefWidth="150.0" text="Parking Space ID" styleClass="table-column-header"/>
+                <TableColumn fx:id="citationsZoneColumn" prefWidth="150.0" text="Parking Zone" styleClass="table-column-header"/>
+                <TableColumn fx:id="citationsInspectionTimes" prefWidth="150.0" text="Inspection Times" styleClass="table-column-header"/>
+                <TableColumn fx:id="citationsAmountColumn" prefWidth="150.0" text="Amount" styleClass="table-column-header"/>
+            </columns>
+        </TableView>
+    </VBox>
+    <VBox alignment="CENTER" layoutX="950.0" layoutY="10.0" spacing="10.0">
+        <ImageView fitHeight="120.0" fitWidth="120.0" styleClass="image-view">
+            <image>
+                <Image url="@assets/parking.png" />
+            </image>
+        </ImageView>
+    </VBox>
+</VBox>

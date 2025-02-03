@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane  prefHeight="720.0" prefWidth="1200.0" styleClass="root" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.customerui.CustomerController">
+    <children>
+        <!-- Title Label -->
+        <Label layoutX="20.0" layoutY="10.0" text="Mulligan Parking System" styleClass="label-bold" />
+
+        <!-- VBox for input fields and buttons -->
+        <VBox layoutX="20.0" layoutY="50.0" spacing="20.0">
+            <!-- Input Field for Parking Space ID -->
+            <HBox spacing="10.0">
+                <Label text="Parking Space ID:" styleClass="label" />
+                <TextField fx:id="parkingSpaceField" prefWidth="200.0" styleClass="text-field" />
+            </HBox>
+
+            <!-- Buttons for Actions -->
+            <HBox spacing="20.0">
+                <Button fx:id="startParkingButton" onAction="#startParking" styleClass="button" text="Start Parking" />
+                <Button fx:id="stopParkingButton" onAction="#stopParking" styleClass="button" text="Stop Parking" />
+                <Button fx:id="showEventsButton" onAction="#showParkingEvents" styleClass="button" text="Show Parking Events" />
+                <Button fx:id="recommendButton" onAction="#recommendParking" styleClass="button" text="Get Recommendation" />
+            </HBox>
+        </VBox>
+
+        <!-- HBox for Tables Section -->
+        <HBox layoutX="20.0" layoutY="150.0" prefHeight="400.0" prefWidth="1160.0" spacing="20.0">
+            <!-- Parking Events Table -->
+            <VBox spacing="10.0" prefWidth="570.0">
+                <Label text="Parking Events Table" styleClass="label-large" />
+                <TableView fx:id="eventsTable" prefHeight="350.0" styleClass="table-view">
+                    <columns>
+                        <TableColumn fx:id="spaceIdColumn" prefWidth="150.0" text="Space ID" styleClass = "column-space-id"/>
+                        <TableColumn fx:id="startTimeColumn" prefWidth="200.0" text="Start Time" styleClass = "column-space-id"/>
+                        <TableColumn fx:id="endTimeColumn" prefWidth="200.0" text="End Time" styleClass = "column-space-id"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <!-- Ongoing Parking Sessions Table -->
+            <VBox spacing="10.0" prefWidth="570.0">
+                <Label text="Ongoing Parking Sessions" styleClass="label-large" />
+                <TableView fx:id="eventsTable1" prefHeight="350.0" styleClass="table-view">
+                    <columns>
+                        <TableColumn fx:id="spaceIdColumn1" prefWidth="275.0" text="Space ID" styleClass = "column-space-id"/>
+                        <TableColumn fx:id="startTimeColumn1" prefWidth="275.0" text="Start Time" styleClass = "column-space-id"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </HBox>
+
+        <!-- Total Amount Label -->
+        <Label fx:id="totalAmountLabel" layoutX="20.0" layoutY="610.0" styleClass="label-large" text="Total Amount: $0.00" />
+
+        <!-- Recommendation Label -->
+        <Label fx:id="recommendationLabel" layoutX="20.0" layoutY="570.0" prefWidth="1160.0" styleClass="label" wrapText="true" text="Recommended Parking Space will appear here." />
+
+        <!-- Message Label -->
+        <Label fx:id="messageLabel" layoutX="20.0" layoutY="650.0" styleClass="label" wrapText="true" text="Messages will appear here." />
+
+        <!-- Logo Section -->
+        <VBox alignment="CENTER" layoutX="950.0" layoutY="10.0" spacing="10.0">
+            <ImageView fitHeight="180.0" fitWidth="180.0" styleClass="image-view">
+                <image>
+                    <Image url="@assets/parking.png" />
+                </image>
+            </ImageView>
+        </VBox>
+    </children>
+</AnchorPane>

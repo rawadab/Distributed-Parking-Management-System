@@ -1,0 +1,96 @@
+/* Root Pane */
+.root {
+    -fx-background-color: #212733;
+}
+
+/* Labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #d1d1d1;
+}
+
+.label-bold {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.label-large {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e0e0e0;
+}
+
+/* Text Fields */
+.text-field {
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 5px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-color: #5c5c5c;
+    -fx-border-width: 1px;
+}
+
+.text-field:focused {
+    -fx-border-color: #1EA51D; /* Green focus border */
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 15px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+#startParkingButton {
+    -fx-background-color: #1EA51D; /* Green button */
+}
+
+#stopParkingButton {
+    -fx-background-color: #D62237; /* Red button */
+}
+
+#showEventsButton {
+    -fx-background-color: #0D6CE8; /* Blue button */
+}
+
+#recommendButton {
+    -fx-background-color: #17a2b8; /* Cyan button */
+}
+
+.button:hover {
+    -fx-opacity: 0.85;
+    -fx-cursor: hand;
+}
+
+/* Tables */
+.table-view {
+    -fx-background-color: #3c3f41;
+    -fx-control-inner-background: #454b5c;
+    -fx-control-inner-background-alt: #3c3f41;
+    -fx-text-background-color: #ffffff;
+    -fx-border-color: #5c5c5c;
+    -fx-border-radius: 5px;
+    -fx-padding: 10px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #3c3f41;
+}
+
+.table-view .column-header, .table-view .table-cell {
+    -fx-border-color: #5c5c5c;
+    -fx-text-fill: #ffffff;
+}
+.column-space-id {
+    -fx-text-fill: #17a2b8; /* Cyan text */
+    -fx-background-color: #212733; /* Dark background */
+}
+/* Image View */
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 4, 4);
+}

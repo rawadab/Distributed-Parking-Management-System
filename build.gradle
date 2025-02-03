@@ -1,0 +1,75 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13' // JavaFX plugin
+    id 'org.beryx.jlink' version '2.25.0'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group = 'com.example'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+// Disable shadowJar for the root project (it doesn't have a main class)
+shadowJar {
+    enabled = false
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'application'
+    apply plugin: 'org.openjfx.javafxplugin' // Apply JavaFX plugin to subprojects
+    apply plugin: 'com.github.johnrengelman.shadow'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation 'org.openjfx:javafx-controls:19.0.2'
+        implementation 'org.openjfx:javafx-fxml:19.0.2'
+        implementation 'com.rabbitmq:amqp-client:5.18.0'
+        implementation 'org.xerial:sqlite-jdbc:3.41.2.2'
+        implementation 'org.slf4j:slf4j-api:2.0.9'
+        implementation 'ch.qos.logback:logback-classic:1.4.12'
+        implementation 'mysql:mysql-connector-java:8.0.33'
+        implementation 'com.zaxxer:HikariCP:5.0.1'
+
+        testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
+    }
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_19
+        targetCompatibility = JavaVersion.VERSION_19
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    application {
+        // Set the main class for each subproject
+        if (project.name.equalsIgnoreCase("CustomerUI")) {
+            mainClass = "com.example.customerui.CustomerUI"
+        } else if (project.name.equalsIgnoreCase("MoUI")) {
+            mainClass = "com.example.customerui.MoUi"
+        } else if (project.name.equalsIgnoreCase("PeoUI")) {
+            mainClass = "com.example.customerui.PeoUi"
+        } else {
+            mainClass = "com.example.${project.name.toLowerCase()}.Main"
+        }
+    }
+
+    javafx {
+        version = '19.0.2'
+        modules = ['javafx.controls', 'javafx.fxml']
+    }
+
+    shadowJar {
+        archiveClassifier.set('all')
+        mergeServiceFiles()
+    }
+}

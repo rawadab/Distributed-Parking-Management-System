@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="19" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/CustomerUI" />
+            <option value="$PROJECT_DIR$/MoUI" />
+            <option value="$PROJECT_DIR$/PeoUI" />
+            <option value="$PROJECT_DIR$/Queries" />
+            <option value="$PROJECT_DIR$/Shared" />
+            <option value="$PROJECT_DIR$/recommender" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

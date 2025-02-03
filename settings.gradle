@@ -1,0 +1,10 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal() // Add the Gradle Plugin Portal
+        mavenCentral() // Add Maven Central
+    }
+}
+
+rootProject.name = "5785-ds-ass2-mohamad-rawad"
+include(":CustomerUI", ":MoUI", ":PeoUI", ":Queries", ":Shared",":recommender")
+
